@@ -1,10 +1,11 @@
 from flask import Flask, jsonify
+from flask_cors import CORS
 import dropbox
 import os
 
 app = Flask(__name__)
+CORS(app)  # Enable CORS for all domains (or configure specific origins)
 
-# Dropbox token from environment variable for security
 ACCESS_TOKEN = os.getenv('DROPBOX_ACCESS_TOKEN')
 
 def list_images_from_dropbox(folder_path=''):
@@ -28,4 +29,3 @@ def get_images():
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=10000)
-
