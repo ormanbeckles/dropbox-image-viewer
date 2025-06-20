@@ -2,3 +2,4 @@ Flask==3.0.3
 dropbox==11.36.2
 gunicorn==22.0.0
 setuptools==70.0.0
+flask-cors==4.0.1
